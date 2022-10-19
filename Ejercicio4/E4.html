@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content
+		="width=device-width, initial-scale=1.0">
+	<title>Ejercicio 4</title>
+
+	<style>
+		.container {
+			width: 70%;
+			margin: auto;
+			text-align: center
+		}
+
+		.dice {
+			text-align: center;
+			display: inline-block;
+			margin: 10px;
+		}
+
+		body {
+			background-color: #069dbf;
+			margin: 0;
+		}
+
+		h1 {
+			margin: 30px;
+			font-family: "Lobster", cursive;
+			text-shadow: 5px 0 #232931;
+			font-size: 4.5rem;
+			color: #cefaeb;
+			text-align: center;
+		}
+
+		p {
+			font-size: 2rem;
+			color: #c0f2e1;
+			font-family: "Indie Flower", cursive;
+		}
+
+		img {
+			width: 100%;
+		}
+
+		.bottom {
+			padding-top: 30px;
+		}
+
+		.butn {
+			background: #a7b0ad;
+			font-family: "Indie Flower", cursive;
+			border-radius: 7px;
+			color: #ffff;
+			font-size: 30px;
+			padding: 16px 25px 16px 25px;
+			text-decoration: none;
+		}
+
+		.butn:hover {
+			background: #e0ebf9;
+			text-decoration: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<h1>Vamos a Jugar</h1>
+
+		<div class="dice">
+			<img class="img1" src="moneda2.gif">
+		</div>
+
+		
+
+	</div>
+
+	<div class="container bottom">
+		<button type="button" class="butn"
+			onClick="elegir(0)">
+			Aguila
+		</button>
+	</div>
+
+    <div class="container bottom">
+		<button type="button" class="butn"
+			onClick="elegir(1)">
+			Sol
+		</button>
+	</div>
+
+    <div class="container bottom">
+		<button type="button" class="butn"
+			onClick="rollTheDice()">
+			Lanzar!
+		</button>
+	</div>
+
+	<script>
+
+		// Player name
+		var parametro;
+        var bandera=false;
+        var valor=0;
+
+		// Function to change the player name
+		function elegir(parametro) {
+       
+               if(valor==0){
+                   window.alert(`Jugaras con aguila`);
+                   valor=parseInt(parametro);
+               }
+               else{
+                window.alert(`Jugaras con sol`);
+                valor=valor=parseInt(parametro);;
+               }
+              
+		}
+
+		// Function to roll the dice
+		function rollTheDice() {
+
+
+			setTimeout(function () {
+				
+				var randomNumber1 = Math.floor(Math.random() * 1 +0 );
+
+				document.querySelector(".img1").setAttribute("src",
+					"moneda" + randomNumber1 + ".jpg");
+
+			console.log("el ramdom es "+randomNumber1);
+            console.log("tu valor"+valor);
+                      if(valor==randomNumber1){
+                        document.querySelector("h1").innerHTML
+						= (" Ganaste :) ");
+                      }
+                      else{
+                        document.querySelector("h1").innerHTML
+						= (" Perdiste :( ");
+                
+                      }
+                   
+				
+			}, 2500);
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+
+    <script>
+       let cali1;
+       let cali2;
+       let cali3;
+       let dato1;
+       let dato2;
+       let dato3;
+       let promedio;
+
+       cali1 = window.prompt("Introduce Calificacion 1:", "0");
+       dato1 = parseFloat(cali1);
+       cali2 = window.prompt("Introduce Calificacion 2:", "0");
+       dato2 = parseFloat(cali2);
+       cali3 = window.prompt("Introduce Calificacion 3:", "0");
+       dato3 = parseFloat(cali3);
+
+       promedio=((dato1+dato2+dato3)/3).toFixed(1);
+
+
+       if(promedio>=5){
+        window.alert(`El promedio es: ${promedio}, El alumno esta aprobado`);
+        document.write(`<br/> <br/> <br/> Felicidades aprobaste` );
+       }else{
+        window.alert(`El promedio es: ${promedio}, El alumno esta suspendido`);
+        document.write(`<br/> <br/> <br/> Chales reprobaste` );
+       }
+ 
+     </script>
+
+</head>
+<body>
+</body>
+</html>
